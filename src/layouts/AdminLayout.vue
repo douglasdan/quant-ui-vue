@@ -41,7 +41,6 @@ export default {
   components: {Setting, SideMenu, Drawer, PageFooter, AdminHeader},
   data () {
     return {
-      minHeight: window.innerHeight - 64 - 122,
       collapsed: false,
       showSetting: false,
       drawerOpen: false
@@ -84,6 +83,9 @@ export default {
     sideMenuData() {
       const {layout, menuData, subMenu} = this
       return layout === 'mix' ? subMenu : menuData
+    },
+    minHeight() {
+      return window.innerHeight - (this.fixedTabs ? 0 : 64);
     }
   },
   methods: {

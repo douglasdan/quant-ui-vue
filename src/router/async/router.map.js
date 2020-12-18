@@ -148,6 +148,17 @@ const routerMap = {
   palette: {
     name: '颜色复选框',
     component: () => import('@/pages/components/Palette')
+  },
+
+  processList: {
+    path: 'process',
+    name: '流程',
+    component: () => import('@/pages/process/ProcessList')
+  },
+  bpmnEditor: {
+    path: 'bpmnEditor',
+    name: 'BPMN编辑',
+    component: () => import('@/pages/process/BpmnEditor')
   }
 }
 export default routerMap

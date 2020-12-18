@@ -8,7 +8,6 @@ const options = {
     {
       path: '/login',
       name: '登录页',
-      component: () => import('@/pages/login')
     },
     {
       path: '*',
@@ -42,12 +41,10 @@ const options = {
                   closable: false
                 }
               },
-              component: () => import('@/pages/dashboard/workplace'),
             },
             {
               path: 'analysis',
               name: '分析页',
-              component: () => import('@/pages/dashboard/analysis'),
             }
           ]
         },
@@ -104,6 +101,11 @@ const options = {
               path: 'card',
               name: '卡片列表',
               component: () => import('@/pages/list/CardList'),
+            },
+            {
+              path: 'prcess',
+              name: '流程管理',
+              component: () => import('@/pages/process/ProcessList'),
             },
             {
               path: 'search',
