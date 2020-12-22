@@ -19,7 +19,7 @@
           </a-tooltip>
           <header-notice class="header-item"/>
           <header-avatar class="header-item"/>
-          <a-dropdown class="lang header-item">
+          <a-dropdown class="lang header-item" v-if="!hideLang">
             <div>
               <a-icon type="global"/> {{langAlias}}
             </div>
@@ -54,7 +54,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('setting', ['theme', 'isMobile', 'layout', 'systemName', 'lang', 'pageWidth']),
+    ...mapState('setting', ['theme', 'isMobile', 'layout', 'systemName', 'lang', 'pageWidth', 'hideLang']),
     headerTheme () {
       if (this.layout == 'side' && this.theme.mode == 'dark' && !this.isMobile) {
         return 'light'

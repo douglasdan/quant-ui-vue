@@ -1,25 +1,35 @@
 <template>
-  <div class="analysis">
-    xxxxx
-    <bpmn-view></bpmn-view>
+  <div class="bpmn" :style="`min-height: ${minHeight}px;`">
+    <dts-bpmn-editor :url="bpmnUrl"></dts-bpmn-editor>
   </div>
 </template>
-  
+
 <script>
   
-  import BpmnView from '@/components/bpmn/bpmn-view'
+  import {mapState} from 'vuex'
+  import DtsBpmnEditor from '@/components/bpmn/dts-bpmn-editor'
 
   export default {
     name: 'bpmn-editor',
     data () {
       return {
-        loading: true
+        loading: true,
+        bpmnUrl: ''
       }
     },
     created() {
       setTimeout(() => this.loading = !this.loading, 1000)
     },
-    components: { BpmnView }
+    computed: {
+      ...mapState('setting', ['fixedTabs']),
+      minHeight() {
+        return window.innerHeight - (this.fixedTabs ? 0 : 64);
+      }
+    },
+    components: { 
+      //DtsBpmnViewer, 
+      DtsBpmnEditor 
+    }
   }
   </script>
   

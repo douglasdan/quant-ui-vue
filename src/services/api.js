@@ -7,4 +7,6 @@ module.exports = {
   ROUTES: `${BASE_URL}/routes`,
   GOODS: `${BASE_URL}/goods`,
   GOODS_COLUMNS: `${BASE_URL}/columns`,
+
+  FLOW_QUERY: `${BASE_URL}/api/process/modeler/select`
 }

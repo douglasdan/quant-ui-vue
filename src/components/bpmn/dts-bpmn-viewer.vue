@@ -1,10 +1,13 @@
-<template>
+  <template>
     <div ref="container" class="vue-bpmn-diagram-container"></div>
   </template>
   
   <script>
+
     import BpmnJS from 'bpmn-js/dist/bpmn-navigated-viewer.production.min.js';
   
+    import { bpmnXmlStr } from '@/mock/bpmn'
+
     export default {
       name: 'bpmn-view',
       props: {
@@ -44,6 +47,9 @@
         if (this.url) {
           this.fetchDiagram(this.url);
         }
+        else {
+          this.diagramXML = bpmnXmlStr
+        }
       },
       beforeDestroy: function() {
         this.bpmnViewer.destroy();
@@ -81,6 +87,7 @@
     .vue-bpmn-diagram-container {
       height: 100%;
       width: 100%;
+      vertical-align: middle;
     }
   </style>
   

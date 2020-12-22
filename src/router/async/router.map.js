@@ -155,10 +155,10 @@ const routerMap = {
     name: '流程',
     component: () => import('@/pages/process/ProcessList')
   },
-  bpmnEditor: {
-    path: 'bpmnEditor',
+  flowEditor: {
+    path: 'flowEditor',
     name: 'BPMN编辑',
-    component: () => import('@/pages/process/BpmnEditor')
+    component: () => import('@/pages/process/FlowEditor')
   }
 }
 export default routerMap
