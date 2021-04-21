@@ -8,5 +8,10 @@ module.exports = {
   GOODS: `${BASE_URL}/goods`,
   GOODS_COLUMNS: `${BASE_URL}/columns`,
 
-  FLOW_QUERY: `${BASE_URL}/api/process/modeler/select`
+  FLOW_QUERY: `${BASE_URL}/api/process/modeler/select`,
+
+  STOCK_SYNC: `${BASE_URL}/api/v1/stock/sync`,
+  STOCK_QUERY: `${BASE_URL}/api/v1/stock/query`,
+  STOCK_KLINE_DAY_INIT: `${BASE_URL}/api/v1/kline/daily/init`,
+
 }

@@ -20,6 +20,11 @@ const options = {
       component: () => import('@/pages/exception/403'),
     },
     {
+      path: '/nssb',
+      name: 'nssb',
+      component: () => import('@/pages/nssb/quant-console'),
+    },
+    {
       path: '/',
       name: '首页',
       component: TabsView,
@@ -27,7 +32,7 @@ const options = {
       children: [
         {
           path: 'dashboard',
-          name: 'Dashboard',
+          name: '智能申报',
           meta: {
             icon: 'dashboard'
           },
@@ -35,7 +40,7 @@ const options = {
           children: [
             {
               path: 'workplace',
-              name: '工作台',
+              name: '工作底稿',
               meta: {
                 page: {
                   closable: false
@@ -43,8 +48,23 @@ const options = {
               },
             },
             {
-              path: 'analysis',
-              name: '分析页',
+              path: 'nssb',
+              name: '纳税申报',
+              component: BlankView,
+              children: [
+                {
+                  path: 'zzsnssb',
+                  name: '增值税纳税申报',
+                },
+                {
+                  path: 'qysdsnb',
+                  name: '增值税纳税年报',
+                },
+                {
+                  path: 'qysdsjb',
+                  name: '增值税纳税季报',
+                },
+              ]
             }
           ]
         },

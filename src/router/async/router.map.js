@@ -155,10 +155,17 @@ const routerMap = {
     name: '流程',
     component: () => import('@/pages/process/ProcessList')
   },
+
   flowEditor: {
     path: 'flowEditor',
     name: 'BPMN编辑',
-    component: () => import('@/pages/process/FlowEditor')
+    component: () => import('@/pages/process/FlowEditor') 
+  },
+  
+  nssb: {
+    path: 'nssb',
+    name: 'nssb',
+    component: () => import('@/pages/nssb/quant-console')
   }
 }
 export default routerMap

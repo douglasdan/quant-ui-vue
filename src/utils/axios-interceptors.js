@@ -1,3 +1,4 @@
+import { de } from 'date-fns/locale'
 import Cookie from 'js-cookie'
 // 401拦截
 const resp401 = {
@@ -76,7 +77,29 @@ const reqCommon = {
   }
 }
 
+const respCommon = {
+
+  onFulfilled(response, options) {
+    const {message} = options
+    if (response.status == 200) {
+      if (!response.data.success && response.data.message) {
+        message.error(response.data.message)
+      }
+    }
+    return Promise.resolve(response.data)
+  },
+
+  onRejected(error, options) {
+    const {message} = options
+    const {response} = error
+    if (response.status === 403) {
+      message.error('请求被拒绝')
+    }
+    return Promise.reject(error)
+  }
+}
+
 export default {
   request: [reqCommon], // 请求拦截
-  response: [resp401, resp403] // 响应拦截
+  response: [resp401, resp403, respCommon] // 响应拦截
 }

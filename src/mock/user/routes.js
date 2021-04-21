@@ -1,7 +1,6 @@
 import Mock from 'mockjs'
 
 Mock.mock(`${process.env.VUE_APP_API_BASE_URL}/routes`, 'get', () => {
-  debugger
   let result = {}
   result.code = 0
   result.data = [{
@@ -9,7 +8,13 @@ Mock.mock(`${process.env.VUE_APP_API_BASE_URL}/routes`, 'get', () => {
     children: [
       {
         router: 'dashboard',
-        children: ['workplace', 'analysis', 'processList', 'flowEditor'],
+        children: [
+          'workplace', 'analysis', 'processList', 'flowEditor',
+          {
+            router: 'nssb',
+            cildren: ['zzsnssb', 'qysdsnb']
+          }
+        ],
       },
       {
         router: 'form',
@@ -37,5 +42,5 @@ Mock.mock(`${process.env.VUE_APP_API_BASE_URL}/routes`, 'get', () => {
       }
     ]
   }]
-  return result
+  return {success: true, data:result, message:''}
 })
