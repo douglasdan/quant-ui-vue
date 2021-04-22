@@ -15,3 +15,5 @@ module.exports = {
   STOCK_KLINE_DAY_INIT: `${BASE_URL}/api/v1/kline/daily/init`,
 
 }
+
+

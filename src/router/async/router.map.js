@@ -166,7 +166,39 @@ const routerMap = {
     path: 'nssb',
     name: 'nssb',
     component: () => import('@/pages/nssb/quant-console')
-  }
+  },
+
+  swsbb: {
+    name: '税务申报表',
+    icon: 'swsbb',
+    component: view.blank
+  },
+  zzs: {
+    name: '增值税报表',
+    icon: 'zzs',
+    component: () => import('@/pages/nssb/zzs.vue')
+  },
+  qysds: {
+    name: '企业所得税（季报）',
+    icon: 'qysds',
+    component: () => import('@/pages/nssb/qysds.vue')
+  },
+
+  swfxgl: {
+    name: '税务风险管理',
+    icon: 'swfxgl',
+    component: view.blank
+  },
+  analysis1: {
+    name: '增值税税负分析',
+    icon: 'analysis1',
+    component: () => import('@/pages/nssb/analysis1.vue')
+  },
+  analysis2: {
+    name: '税负全景分析',
+    icon: 'analysis2',
+    component: () => import('@/pages/nssb/analysis2.vue')
+  },
 }
 export default routerMap
 

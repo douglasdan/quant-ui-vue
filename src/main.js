@@ -12,6 +12,7 @@ import {initI18n} from '@/utils/i18n'
 import bootstrap from '@/bootstrap'
 import './styles/index.scss'
 
+
 const router = initRouter(store.state.setting.asyncRoutes)
 const i18n = initI18n('CN', 'US')
 
