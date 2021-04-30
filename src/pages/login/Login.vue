@@ -100,20 +100,23 @@ export default {
       })
     },
     afterLogin(res) {
+      
       this.logging = false
-      const loginRes = res.data
-      if (loginRes.code >= 0) {
-        const {user, permissions, roles} = loginRes.data
+      
+      if (res.success) {
+        const user = res.data
         this.setUser(user)
-        this.setPermissions(permissions)
-        this.setRoles(roles)
-        setAuthorization({token: loginRes.data.token, expireAt: new Date(loginRes.data.expireAt)})
+        // this.setPermissions(permissions)
+        // this.setRoles(roles)
+        setAuthorization({token: res.data.token, expireAt: new Date(res.data.expireAt)})
         // 获取路由配置
         getRoutesConfig().then(result => {
           const routesConfig = result.data.data
           loadRoutes(routesConfig)
-          this.$router.push('/swsbb/zzs')
-          this.$message.success(loginRes.message, 3)
+
+          if (res.message) {
+            this.$message.success(ret.message, 3)
+          }
         })
       } else {
         this.error = loginRes.message

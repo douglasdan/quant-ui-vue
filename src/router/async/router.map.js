@@ -199,6 +199,39 @@ const routerMap = {
     icon: 'analysis2',
     component: () => import('@/pages/nssb/analysis2.vue')
   },
+
+  zzsbb: {
+    authority: '*',
+    name: 'zzsbb',
+    path: 'zzsbb',
+    component: () => import('@/pages/nssb/zzs.vue')
+  },
+  qysdsbb: {
+    authority: '*',
+    name: 'qysdsbb',
+    path: 'qysdsbb',
+    component: () => import('@/pages/nssb/qysds.vue')
+  },
+  risk1: {
+    authority: '*',
+    name: 'risk1',
+    path: 'risk1',
+    component: () => import('@/pages/nssb/analysis1.vue')
+  },
+  risk2: {
+    authority: '*',
+    name: 'risk2',
+    path: 'risk2',
+    component: () => import('@/pages/nssb/analysis2.vue')
+  },
+
+  demo: {
+    authority: '*',
+    name: 'xview',
+    path: 'xview',
+    component: () => import('@/components/xview/run.vue')
+  },
+
 }
 export default routerMap
 

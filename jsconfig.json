@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "jsx":"react",
+    "experimentalDecorators":true,
+    "baseUrl":".",
+    "paths":{
+      "@/*":["./src/*"],
+      "common/*":["./src/components/common/*"],
+      "action/*":["./src/redux/action/*"],
+      "workbench/*":["./src/components/workbench/*"],
+      "prepareAPath/*":["./src/redux/action/workbench/dataprepare/*"],
+      "updateChart/*":["./src/redux/action/workbench/visualize-component/UpdateChart.action.js/*"],
+    }
+  },
+  "exclude": [
+      "node_modules",
+      "scripts"
+  ]
+}

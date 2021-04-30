@@ -14,6 +14,33 @@ const routesConfig = [
     router: 'exp403',
     path: '/403',
     name: '403'
+  },
+  {
+    router: 'risk1',
+    path: '/risk1',
+    name: 'risk1'
+    
+  },
+  {
+    router: 'risk2',
+    path: '/risk2',
+    name: 'risk2'
+  },
+  {
+    router: 'zzsbb',
+    path: '/zzsbb',
+    name: 'zzsbb'
+  },
+  {
+    router: 'qysdsbb',
+    path: '/qysdsbb',
+    name: 'qysdsbb'
+  },
+
+  {
+    router: 'demo',
+    path: '/demo',
+    name: 'demo'
   }
 ]
 

@@ -1,3 +1,4 @@
+import {parseRoutes} from '@/utils/routerUtil'
 <template>
     <div id="risk-pie-chart1" style="width: 600px; height: 400px;">
     </div>
