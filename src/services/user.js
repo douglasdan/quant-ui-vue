@@ -14,8 +14,36 @@ export async function login(name, password) {
   })
 }
 
+function generateRouteTree(menu) {
+  if (menu.virtual) {
+    return generateRouteTree(menu.children ? menu.children : [])
+  }
+  else if (Array.isArray(menu)) {
+    return menu.map(a => generateRouteTree(a))
+  }
+  else {
+    let a = {}
+    a.router = menu.menuPath
+    a.name = menu.menuName
+    a.children = generateRouteTree(menu.children)
+    return a
+  }
+}
+
 export async function getRoutesConfig() {
-  return request(ROUTES, METHOD.GET)
+  return request(ROUTES, METHOD.GET).then(ret => {
+    
+    let result = {}
+    result.data = [{
+      redirectTo: '',
+      router: 'root',
+      children: []
+    }]
+    result.data[0].redirectTo = ret.data.redirectTo
+    result.data[0].children = generateRouteTree(ret.data.menuTree.root)
+    console.log(result)
+    return {success:true, data: result}
+  })
 }
 
 /**

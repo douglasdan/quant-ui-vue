@@ -3,6 +3,7 @@ import {mergeI18nFromRoutes} from '@/utils/i18n'
 import Router from 'vue-router'
 import deepMerge from 'deepmerge'
 import basicOptions from '@/router/async/config.async'
+import { de } from 'date-fns/locale'
 
 //应用配置
 let appOptions = {
@@ -39,6 +40,12 @@ function parseRoutes(routesConfig, routerMap) {
       router = routerMap[item.router]
       routeCfg = item
     }
+    
+    if (!router) {
+      router = routerMap.blank
+      routeCfg = {path: item.name, router: item}
+    }
+
     if (!router) {
       console.warn(`can't find register for router ${routeCfg.router}, please register it in advance.`)
       router = typeof item === 'string' ? {path: item, name: item} : item
@@ -108,6 +115,7 @@ function loadRoutes(routesConfig) {
   // 提取路由国际化数据
   mergeI18nFromRoutes(i18n, router.options.routes)
   // 初始化Admin后台菜单数据
+  debugger
   const rootRoute = router.options.routes.find(item => item.path === '/')
   const menuRoutes = rootRoute && rootRoute.children
   if (menuRoutes) {

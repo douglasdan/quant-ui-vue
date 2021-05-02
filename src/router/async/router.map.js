@@ -18,6 +18,9 @@ const routerMap = {
     redirect: '/login',
     component: view.tabs
   },
+  blank: {
+    component: view.blank
+  },
   dashboard: {
     name: 'Dashboard',
     component: view.blank
@@ -232,6 +235,16 @@ const routerMap = {
     component: () => import('@/components/xview/run.vue')
   },
 
+  companyMgr: {
+    component: () => view.blank
+  },
+  orgMgr: {
+    component: () => import('@/pages/admin/OrgMgr.vue')
+  },
+  userMgr: {
+    component: () => view.blank
+  },
+  
 }
 export default routerMap
 

@@ -59,6 +59,7 @@ export default {
     }
   },
   created () {
+    
     this.loadCacheConfig(this.$router?.options?.routes)
     this.loadCachedTabs()
     const route = this.$route

@@ -113,7 +113,7 @@ export default {
         getRoutesConfig().then(result => {
           const routesConfig = result.data.data
           loadRoutes(routesConfig)
-
+          this.$router.push(routesConfig[0].redirectTo)
           if (res.message) {
             this.$message.success(ret.message, 3)
           }
